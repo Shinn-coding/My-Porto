@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shinn — Anak TKJ yang Suka Bikin Web</title>
+  <meta name="description"
+    content="Portfolio Shinn — pelajar TKJ SMKN 2 Pangkal Pinang yang belajar bikin web full-stack dengan cara langsung mencoba.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#home" class="brand">Portofolio<span class="brand-dot">.</span></a>
+      <nav class="main-nav" id="main-nav">
+        <a href="#home" class="is-active">Home</a>
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero wrap">
+      <div class="hero-text">
+
+        <p class="hero-hello">Hi, I'm</p>
+
+        <h1 class="hero-name">Shinn<span class="dot-alt"></span></h1>
+
+        <p class="hero-role">
+          <span class="role-window"><span class="role-track" id="role-track">
+              <span class="role-line is-active">Full-Stack Web Developer</span>
+              <span class="role-line">Pelajar TKJ</span>
+              <span class="role-line">Next.js &amp; Prisma</span>
+            </span></span>
+        </p>
+
+        <p class="hero-desc">
+          Anak TKJ di SMKN 2 Pangkal Pinang yang suka banget ngoprek — di sekolah
+          belajar jaringan, di luar itu belajar ngoding web full-stack. Dari hotspot
+          MikroTik sampai sistem order kafe, semuanya saya pelajari dengan cara
+          langsung dicoba (kadang rusak dulu, baru bener).
+        </p>
+
+        <div class="hero-socials" aria-label="Social links">
+          <a href="https://github.com/Shinn-coding" target="_blank" rel="noopener" class="social-circle"
+            aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+            </svg>
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wanstudent60@gmail.com&su=Hello%20Shinn%20-%20Internship%20%2F%20Project%20Inquiry"
+            target="_blank" rel="noopener" class="social-circle" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm16 2.24-8 5.33-8-5.33V18h16V6.24ZM19.4 6H4.6l7.4 4.93L19.4 6Z" />
+            </svg>
+          </a>
+          <a href="https://wa.me/6285809950867" target="_blank" rel="noopener" class="social-circle"
+            aria-label="WhatsApp" title="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.04 2a9.9 9.9 0 0 0-8.4 15.16L2.05 22l4.98-1.55A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.08l-.29-.17-2.95.92.95-2.87-.19-.3A8.1 8.1 0 0 1 12.04 3.8Zm-3.3 4.06c-.16 0-.43.06-.65.3-.22.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.74 4.28 3.73 2.12.82 2.55.66 3.01.62.46-.04 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.17-.48-.29-.25-.13-1.48-.73-1.7-.81-.23-.09-.4-.13-.56.12-.17.25-.65.81-.8.98-.14.17-.29.19-.54.06a6.83 6.83 0 0 1-2-1.24 7.5 7.5 0 0 1-1.39-1.73c-.14-.25-.01-.38.11-.51.11-.12.25-.3.37-.46.13-.15.17-.25.25-.42.09-.17.04-.31-.02-.44-.06-.12-.55-1.36-.77-1.86-.19-.44-.39-.44-.55-.45h-.54Z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/shinn_matchalatte/" target="_blank" rel="noopener" class="social-circle"
+            aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2c2.72 0 3.06.01 4.12.06 1.07.05 1.79.22 2.43.47.66.25 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.36.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.07-.22 1.79-.47 2.43-.25.66-.6 1.22-1.15 1.77-.55.55-1.11.9-1.77 1.15-.64.25-1.36.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.36-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.07.22-1.79.47-2.43.25-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.36-.42 2.43-.47C8.94 2.01 9.28 2 12 2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.98.04-1.5.2-1.86.34-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.35-.3.88-.34 1.86-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.98.2 1.5.34 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.35.14.88.3 1.86.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.98-.04 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.35.3-.88.34-1.86.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.98-.2-1.5-.34-1.86a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.35-.14-.88-.3-1.86-.34-1.05-.05-1.37-.06-4.04-.06Zm0 3.06a5.14 5.14 0 1 1 0 10.28 5.14 5.14 0 0 1 0-10.28Zm0 1.8a3.34 3.34 0 1 0 0 6.68 3.34 3.34 0 0 0 0-6.68Zm5.34-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z" />
+            </svg>
+          </a>
+          <a href="https://linktr.ee/Shinn_Dev" target="_blank" rel="noopener" class="social-circle"
+            aria-label="Linktree" title="Linktree">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M13.5 3.5h-3v6.08L6.3 5.4 4.3 7.4l3.9 3.9H2.5v3h5.7l-3.9 3.9 2 2 4.2-4.18V22h3v-5.98l4.2 4.18 2-2-3.9-3.9h5.7v-3h-5.7l3.9-3.9-2-2-4.2 4.18V3.5Z" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">Lihat work saya</a>
+          <a href="#contact" class="btn btn-outline">Hubungi saya</a>
+        </div>
+
+      </div>
+
+      <div class="hero-frame">
+        <!-- Globe network interaktif — kanvas 3D di belakang foto -->
+        <canvas class="network-globe net-globe-canvas" id="net-globe" aria-hidden="true"></canvas>
+        <div class="photo-ring">
+          <div class="photo-card">
+            <img src="assets/ganteng banget jir.jpeg" alt="Photo of Shinn" id="profile-photo">
+          </div>
+          <span class="photo-badge">
+            <span class="badge-dot" aria-hidden="true"></span>Terbuka untuk PKL &amp; Project
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section wrap reveal">
+      <h2 class="section-title">Tentang saya</h2>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="assets/ganteng banget jir.jpeg" alt="Photo of Shinn" loading="lazy">
+        </div>
+
+        <div class="about-content">
+          <p>
+            Saya siswa <strong>TKJ di SMKN 2 Pangkal Pinang</strong>. Masuk jurusan
+            ini karena memang suka ngoprek — kalau ada yang rusak, saya penasaran
+            gimana cara benerinnya, bukan cuma mau cepat selesai. Sekarang jadi
+            lumayan manfaat: kalau WiFi kelas bermasalah, teman-teman tau harus
+            panggil siapa.
+          </p>
+          <p>
+            Belajar web mulai dari penasaran: awalnya iseng bikin HTML, eh malah
+            nagih. Dari situ akhirnya jadi <strong>Kopi Senja</strong> — sistem
+            order kafe full-stack yang saya rancang, debug, dan deploy sendiri.
+            Di luar ngoding, saya juga suka rakit PC dan setting jaringan MikroTik.
+            Masih banyak yang belum saya tau — dan jujur, justru itu bagian
+            yang paling seru.
+          </p>
+
+          <div class="skill-pills">
+            <span class="skill-pill">Next.js</span>
+            <span class="skill-pill">Prisma</span>
+            <span class="skill-pill">MikroTik</span>
+            <span class="skill-pill">Web Dev</span>
+          </div>
+
+          <a href="#stack" class="btn btn-primary about-cta">Lihat tool yang saya pakai</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section id="stack" class="section wrap reveal">
+      <h2 class="section-title">Tools yang saya pakai</h2>
+      <p class="section-lede">Sebagian dipelajari di sekolah (TKJ), sebagian lagi saya
+        pelajari sendiri cuma karena pengen tau. Ini yang paling sering kepegang.</p>
+
+      <div class="stack-grid">
+        <article class="stack-card">
+          <div class="stack-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4Zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4Z" />
+            </svg>
+          </div>
+          <h3>Web Development</h3>
+          <ul class="stack-list">
+            <li>HTML &amp; CSS</li>
+            <li>JavaScript</li>
+            <li>PHP &amp; MySQL</li>
+            <li>Next.js &amp; React</li>
+            <li>Prisma ORM</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </article>
+
+        <article class="stack-card">
+          <div class="stack-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 3a4 4 0 0 1 4 4c0 1.4-.7 2.6-1.8 3.3l.3 1.7H20a1 1 0 0 1 1 1v2h-2v-1.2a.8.8 0 0 0-.8-.8h-5.7l-.5-2.6A4 4 0 0 1 12 3Zm-6.5 11h4.8l.3 1.7c-.7.5-1.2 1.2-1.4 2.1L8 21H6l-1.2-3.2a3.5 3.5 0 0 1 .7-3.8ZM4 19h2v2H4v-2Z" />
+            </svg>
+          </div>
+          <h3>Networking &amp; Systems</h3>
+          <ul class="stack-list">
+            <li>MikroTik — hotspot &amp; bandwidth management</li>
+            <li>DHCP &amp; DNS configuration</li>
+            <li>PC assembly &amp; troubleshooting</li>
+            <li>OS installation — Windows / Linux</li>
+          </ul>
+        </article>
+
+        <article class="stack-card">
+          <div class="stack-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M13 2 4.09 12.35a1 1 0 0 0 .76 1.65H10l-1.5 7.5a.5.5 0 0 0 .88.42L19.5 11.2a1 1 0 0 0-.77-1.64H13.5L15 3.2A.6.6 0 0 0 14 2.6L13 2Z" />
+            </svg>
+          </div>
+          <h3>Tools &amp; Deployment</h3>
+          <ul class="stack-list">
+            <li>Git &amp; GitHub</li>
+            <li>Vercel</li>
+            <li>PostgreSQL / SQLite</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section id="work" class="section wrap reveal">
+      <h2 class="section-title">Proyek yang pernah saya kerjakan</h2>
+      <p class="section-lede">Bukan kumpulan project besar — tapi semua yang ada di
+        sini benar-benar saya selesaikan sampai jalan, bukan cuma nangkring di lokal.</p>
+
+      <div class="work-grid">
+        <article class="work-card" data-reveal>
+          <div class="work-media">
+            <!-- TODO: ganti dengan screenshot asli tampilan Kopi Senja -->
+            <img src="assets/untuk photo project coffe.png" alt="Tampilan Kopi Senja" loading="lazy">
+          </div>
+          <div class="work-body">
+            <div class="work-head">
+              <span class="work-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17.8 8.5C17.9 8.2 18 7.9 18 7.5 18 5.6 16.4 4 14.5 4h-8A2.5 2.5 0 0 0 4 6.5v11A2.5 2.5 0 0 0 6.5 20h11a2.5 2.5 0 0 0 2.5-2.5v-6c0-1.4-.9-2.6-2.2-3ZM6.5 6h8a1.5 1.5 0 0 1 0 3h-8a1.5 1.5 0 0 1 0-3Z" />
+                </svg>
+              </span>
+              <div>
+                <h3>Kopi Senja</h3>
+                <p class="work-cat">Next.js · Prisma · PostgreSQL</p>
+              </div>
+            </div>
+            <p class="work-desc">Project pertama yang saya bawa sampai production:
+              tamu pesan tanpa perlu buat akun, dapur &amp; kasir dapat dashboard
+              live. Dikerjakan pelan-pelan sambil banyak banget nanya ke dokumentasi.</p>
+            <div class="work-links">
+              <a href="https://github.com/Shinn-coding/Project-web-coffe" target="_blank" rel="noopener"
+                class="work-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
+                View Code
+              </a>
+              <a href="https://coffe-kopi-senja.vercel.app" target="_blank" rel="noopener" class="work-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14 3v2h3.59l-8.3 8.29 1.42 1.42L19 6.41V10h2V3h-7ZM5 5h6V3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-7h-2v6H5V5Z" />
+                </svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-reveal>
+          <div class="work-media">
+            <!-- TODO: ganti dengan screenshot asli tampilan Surprise Website -->
+            <img src="assets/untuk supres.png" alt="Tampilan Surprise Website" loading="lazy">
+          </div>
+          <div class="work-body">
+            <div class="work-head">
+              <span class="work-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 21s-7.5-4.9-9.6-9.2C.9 8.7 2.7 5.5 5.8 5.1c1.9-.3 3.8.7 4.7 2.4h3c.9-1.7 2.8-2.7 4.7-2.4 3.1.4 4.9 3.6 3.4 6.7C19.5 16.1 12 21 12 21Z" />
+                </svg>
+              </span>
+              <div>
+                <h3>Surprise Website</h3>
+                <p class="work-cat">HTML · CSS · JavaScript</p>
+              </div>
+            </div>
+            <p class="work-desc">Web kejutan untuk orang spesial — full animasi,
+              dikerjakan diam-diam, dan berhasil bikin dia senyum. Kadang alasan
+              bikin project cuma segitu, dan itu cukup.</p>
+            <div class="work-links">
+              <a href="https://github.com/Shinn-coding/-home-shinn-work-surprise" target="_blank" rel="noopener"
+                class="work-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
+                View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-reveal>
+          <div class="work-media">
+            <!-- TODO: ganti dengan screenshot asli tampilan Simple Website Project (menunggu file dari saya) -->
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=600&fit=crop&auto=format"
+              alt="Simple Website Project" loading="lazy">
+          </div>
+          <div class="work-body">
+            <div class="work-head">
+              <span class="work-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M8.6 6.6 4 11.2a1.2 1.2 0 0 0 0 1.7l4.6 4.6 1.4-1.5L6.1 12l3.9-3.9-1.4-1.5Zm6.8 0-1.4 1.5 3.9 3.9-3.9 3.9 1.4 1.5 4.6-4.6a1.2 1.2 0 0 0 0-1.7l-4.6-4.5Z" />
+                </svg>
+              </span>
+              <div>
+                <h3>Simple Website Project</h3>
+                <p class="work-cat">HTML · CSS · PHP · MySQL</p>
+              </div>
+            </div>
+            <p class="work-desc">Latihan pertama bikin web full-stack: responsive,
+              pakai PHP &amp; MySQL, dan banyak hal dikerjain dengan cara salah
+              dulu baru bener. Dari sini saya mulai paham sisi server.</p>
+            <div class="work-links">
+              <span class="work-link work-link--static" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
+                View Code
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section wrap reveal">
+      <h2 class="section-title">Ngobrol dulu?</h2>
+      <p class="section-lede">Mau ngobrol soal PKL, project, atau sekadar tanya-tanya?
+        Isi form di bawah — langsung masuk ke inbox saya.</p>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Nama</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="field"> <label for="subject">Subjek</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="field"> <label for="message">Pesan</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Kirim Pesan</button>
+        <p class="form-note" id="form-note"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer wrap">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Shinn.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Shinn-coding" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=wanstudent60@gmail.com" target="_blank"
+          rel="noopener">Email</a>
+        <a href="https://wa.me/6285809950867" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/shinn_matchalatte/" target="_blank" rel="noopener">Instagram</a>
+        <a href="#home" class="to-top">Ke atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
