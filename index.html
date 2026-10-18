@@ -12,6 +12,16 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <script>
+    (() => {
+      let theme;
+      try { theme = localStorage.getItem("theme"); } catch (error) { /* Storage may be unavailable. */ }
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      if (theme === "light") document.documentElement.dataset.theme = "light";
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,8 +36,13 @@
         <a href="#about">About</a>
         <a href="#stack">Stack</a>
         <a href="#work">Work</a>
+        <a href="#certificates">Sertifikat</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme" title="Toggle dark/light">
+        <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"></path></svg>
+      </button>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -47,16 +62,13 @@
         <p class="hero-role">
           <span class="role-window"><span class="role-track" id="role-track">
               <span class="role-line is-active">Full-Stack Web Developer</span>
-              <span class="role-line">Pelajar TKJ</span>
+              <span class="role-line">Linux &amp; Infrastructure</span>
               <span class="role-line">Next.js &amp; Prisma</span>
             </span></span>
         </p>
 
         <p class="hero-desc">
-          Anak TKJ di SMKN 2 Pangkal Pinang yang suka banget ngoprek — di sekolah
-          belajar jaringan, di luar itu belajar ngoding web full-stack. Dari hotspot
-          MikroTik sampai sistem order kafe, semuanya saya pelajari dengan cara
-          langsung dicoba (kadang rusak dulu, baru bener).
+          Penasaran sama cara kerja sesuatu sampai ke akar masalahnya — itu yang bawa saya dari iseng belajar HTML sampai bikin Kopi Senja, sistem order kafe full-stack yang saya rancang, debug, dan deploy sendiri.
         </p>
 
         <div class="hero-socials" aria-label="Social links">
@@ -129,19 +141,10 @@
 
         <div class="about-content">
           <p>
-            Saya siswa <strong>TKJ di SMKN 2 Pangkal Pinang</strong>. Masuk jurusan
-            ini karena memang suka ngoprek — kalau ada yang rusak, saya penasaran
-            gimana cara benerinnya, bukan cuma mau cepat selesai. Sekarang jadi
-            lumayan manfaat: kalau WiFi kelas bermasalah, teman-teman tau harus
-            panggil siapa.
+            Saya tipe orang yang nggak bisa diem kalau ketemu masalah teknis yang belum kelar. Saya lebih suka bongkar sendiri sampai ketemu akar masalahnya, daripada asal jalan terus biar cepat selesai. Jaringan dan MikroTik, misalnya, itu salah satu hal yang saya pelajari waktu sekolah — dan ternyata kepake banget buat ngerti cara kerja infrastruktur di balik aplikasi yang saya bikin sendiri.
           </p>
           <p>
-            Belajar web mulai dari penasaran: awalnya iseng bikin HTML, eh malah
-            nagih. Dari situ akhirnya jadi <strong>Kopi Senja</strong> — sistem
-            order kafe full-stack yang saya rancang, debug, dan deploy sendiri.
-            Di luar ngoding, saya juga suka rakit PC dan setting jaringan MikroTik.
-            Masih banyak yang belum saya tau — dan jujur, justru itu bagian
-            yang paling seru.
+            Dari situ saya jalan ke web development — awalnya iseng belajar HTML, eh malah nagih. Dari situ akhirnya jadi <strong>Kopi Senja</strong>: sistem order kafe full-stack yang saya rancang, debug, dan deploy sendiri dari nol, sampai ke detail-detail kecil kayak keamanan dan sinkronisasi real-time. Saya juga tipe yang suka nyusun rencana secara rapi dan realistis sebelum eksekusi. Masih banyak hal yang belum saya kuasai — dan buat saya, itu justru bagian paling seru dari belajar.
           </p>
 
           <div class="skill-pills">
@@ -331,6 +334,47 @@
       </div>
     </section>
 
+    <!-- ============ CERTIFICATES ============ -->
+    <section id="certificates" class="section wrap reveal">
+      <h2 class="section-title">Sertifikat</h2>
+      <p class="section-lede">Sertifikat kegiatan dan pencapaian yang saya ikuti.</p>
+
+      <div class="cert-grid">
+        <article class="work-card cert-card">
+          <div class="work-media certificate-media" role="button" tabindex="0" aria-label="Perbesar sertifikat Sekolah Pasar Modal — Juli 2026"><img src="assets/cert-1-web.jpg" alt="Sertifikat Sekolah Pasar Modal Bursa Efek Indonesia untuk Wan Muhammad Hafiz Abdillah, Juli 2026" loading="lazy" oncontextmenu="return false"></div>
+          <div class="work-body">
+            <h3>Sekolah Pasar Modal</h3>
+            <p class="work-cat">Bursa Efek Indonesia · 07/2026</p>
+            <p class="work-desc">Menyelesaikan kegiatan edukasi pasar modal yang diselenggarakan oleh Bursa Efek Indonesia.</p>
+          </div>
+        </article>
+        <article class="work-card cert-card">
+          <div class="work-media certificate-media" role="button" tabindex="0" aria-label="Perbesar sertifikat Talkshow 6.0 — Agustus 2026"><img src="assets/cert-2-web.jpg" alt="Sertifikat apresiasi sebagai peserta Talkshow 6.0 KSPM FEB Universitas Bangka Belitung, Agustus 2026" loading="lazy" oncontextmenu="return false"></div>
+          <div class="work-body">
+            <h3>Talkshow 6.0 — Certificate of Appreciation</h3>
+            <p class="work-cat">KSPM FEB Universitas Bangka Belitung · 08/2026</p>
+            <p class="work-desc">Apresiasi sebagai peserta Talkshow 6.0 bertema Financial Growth: Smart Choices in the Digital Era.</p>
+          </div>
+        </article>
+        <article class="work-card cert-card">
+          <div class="work-media certificate-media" role="button" tabindex="0" aria-label="Perbesar sertifikat Stocklab Competition 6.0 — Agustus 2026"><img src="assets/cert-3-web.jpg" alt="Sertifikat pencapaian Stocklab Competition 6.0 KSPM FEB Universitas Bangka Belitung, Agustus 2026" loading="lazy" oncontextmenu="return false"></div>
+          <div class="work-body">
+            <h3>Stocklab Competition 6.0 — Certificate of Achievement</h3>
+            <p class="work-cat">KSPM FEB Universitas Bangka Belitung · 08/2026</p>
+            <p class="work-desc">Sertifikat pencapaian dalam Stocklab Competition 6.0.</p>
+          </div>
+        </article>
+        <article class="work-card cert-card">
+          <div class="work-media certificate-media" role="button" tabindex="0" aria-label="Perbesar sertifikat Sekolah Pasar Modal — Juni 2026"><img src="assets/cert-4-web.jpg" alt="Sertifikat Sekolah Pasar Modal Bursa Efek Indonesia untuk Wan Muhammad Hafiz Abdillah, Juni 2026" loading="lazy" oncontextmenu="return false"></div>
+          <div class="work-body">
+            <h3>Sekolah Pasar Modal</h3>
+            <p class="work-cat">Bursa Efek Indonesia · 06/2026</p>
+            <p class="work-desc">Menyelesaikan kegiatan Sekolah Pasar Modal yang diselenggarakan oleh Bursa Efek Indonesia.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="section wrap reveal">
       <h2 class="section-title">Ngobrol dulu?</h2>
@@ -376,7 +420,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 
 </html>

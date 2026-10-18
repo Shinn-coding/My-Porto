@@ -1,4 +1,51 @@
 // =========================================================
+// Theme toggle — isolated from the existing portfolio interactions.
+// =========================================================
+(() => {
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  const colorScheme = window.matchMedia("(prefers-color-scheme: light)");
+  const getStoredTheme = () => {
+    try {
+      const savedTheme = window.localStorage.getItem("theme");
+      return savedTheme === "light" || savedTheme === "dark" ? savedTheme : null;
+    } catch (error) {
+      return null;
+    }
+  };
+  let manualTheme = getStoredTheme();
+
+  const applyTheme = (theme) => {
+    root.dataset.theme = theme;
+    if (toggle) toggle.setAttribute("aria-pressed", String(theme === "light"));
+  };
+
+  applyTheme(manualTheme || (colorScheme.matches ? "light" : "dark"));
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const theme = root.dataset.theme === "light" ? "dark" : "light";
+      manualTheme = theme;
+      applyTheme(theme);
+      try {
+        window.localStorage.setItem("theme", theme);
+      } catch (error) {
+        // Keep the current-page choice even when storage is unavailable.
+      }
+    });
+  }
+
+  const syncSystemTheme = (event) => {
+    if (!manualTheme) applyTheme(event.matches ? "light" : "dark");
+  };
+  if (typeof colorScheme.addEventListener === "function") {
+    colorScheme.addEventListener("change", syncSystemTheme);
+  } else if (typeof colorScheme.addListener === "function") {
+    colorScheme.addListener(syncSystemTheme);
+  }
+})();
+
+// =========================================================
 // Setup dasar
 // =========================================================
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -76,7 +123,7 @@ if (contactForm) {
     const subject = data.get("subject");
     const message = data.get("message");
 
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const body = `Name: ${name}\\nEmail: ${email}\\n\\n${message}`;
 
     const params = new URLSearchParams({
       view: "cm",
@@ -430,3 +477,91 @@ if (navLinks.length && "IntersectionObserver" in window) {
     });
   });
 }
+
+// =========================================================
+// Certificate lightbox — isolated from the existing portfolio interactions.
+// =========================================================
+(() => {
+  const certificateMedia = Array.from(document.querySelectorAll(".cert-card .work-media"));
+  if (!certificateMedia.length) return;
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "certificate-lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Pratinjau sertifikat");
+  lightbox.hidden = true;
+
+  const closeButton = document.createElement("button");
+  closeButton.className = "certificate-lightbox__close";
+  closeButton.type = "button";
+  closeButton.setAttribute("aria-label", "Tutup pratinjau sertifikat");
+  closeButton.textContent = "×";
+
+  const stage = document.createElement("div");
+  stage.className = "certificate-lightbox__stage";
+
+  const fullImage = document.createElement("img");
+  fullImage.alt = "";
+  // Blok klik-kanan & drag hanya untuk gambar sertifikat di lightbox.
+  fullImage.draggable = false;
+  fullImage.addEventListener("contextmenu", (event) => event.preventDefault());
+
+  stage.append(fullImage);
+  lightbox.append(closeButton, stage);
+  document.body.append(lightbox);
+
+  let trigger = null;
+
+  const close = () => {
+    if (lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.classList.remove("lightbox-open");
+    fullImage.removeAttribute("src");
+    if (trigger && document.contains(trigger)) trigger.focus();
+    trigger = null;
+  };
+
+  const open = (media) => {
+    const thumbnail = media.querySelector("img");
+    if (!thumbnail) return;
+    trigger = media;
+    fullImage.src = thumbnail.currentSrc || thumbnail.src;
+    fullImage.alt = thumbnail.alt;
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+    closeButton.focus();
+  };
+
+  certificateMedia.forEach((media) => {
+    media.addEventListener("click", (event) => {
+      if (event.target.closest("a")) return;
+      open(media);
+    });
+    media.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      open(media);
+    });
+  });
+
+  closeButton.addEventListener("click", (event) => {
+    event.stopPropagation(); // jangan buble ke backdrop handler
+    close();
+  });
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) close();
+  });
+  // Mobile: klik≈tap tunggal; stopPropagation di button cukup menjaga
+  // supaya tidak dobel-eksekusi/lag.
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.hidden) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close();
+    } else if (event.key === "Tab") {
+      event.preventDefault();
+      closeButton.focus();
+    }
+  });
+})();
